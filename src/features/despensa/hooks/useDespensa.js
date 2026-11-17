@@ -22,5 +22,16 @@ export const useDespensa = () => {
     cargarDespensa()
   }, [])
 
-  return { ingredientes, cargando, error }
+  const agregarIngrediente = async (datosFormulario) => {
+    try {
+      const nuevoItem = await despensaServicio.agregarItem(datosFormulario)
+      setIngredientes((anteriores) => [...anteriores, nuevoItem])
+      return true
+    } catch (err) {
+      console.error('Error al agregar el ingrediente:', err)
+      return false
+    }
+  }
+
+  return { ingredientes, cargando, error, agregarIngrediente }
 }
