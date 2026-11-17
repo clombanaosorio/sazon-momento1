@@ -1,4 +1,4 @@
-const INGREDIENTES_DESPENSA = [
+const INGREDIENTES_INICIALES = [
   { id: 1, nombre: 'Arroz', cantidad: 2, unidadMedida: 'kg', fechaCaducidad: '2027-05-10', idProducto: 101, idDespensa: 1 },
   { id: 2, nombre: 'Huevos', cantidad: 12, unidadMedida: 'und', fechaCaducidad: '2026-11-30', idProducto: 102, idDespensa: 1 },
   { id: 3, nombre: 'Limón', cantidad: 5, unidadMedida: 'und', fechaCaducidad: '2026-11-24', idProducto: 103, idDespensa: 1 },
@@ -12,10 +12,36 @@ const INGREDIENTES_DESPENSA = [
 
 const RETARDO_SIMULADO_MS = 600
 
+let despensaEnMemoria = [...INGREDIENTES_INICIALES]
+
+const esperar = (milisegundos) =>
+  new Promise((resolve) => setTimeout(resolve, milisegundos))
+
+const generarId = () => {
+  const ids = despensaEnMemoria.map((item) => item.id)
+  return Math.max(0, ...ids) + 1
+}
+
 export const despensaServicio = {
-  listarDespensa() {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve([...INGREDIENTES_DESPENSA]), RETARDO_SIMULADO_MS)
-    })
+  async listarDespensa() {
+    await esperar(RETARDO_SIMULADO_MS)
+    return [...despensaEnMemoria]
+  },
+
+  async agregarItem({ idIngrediente, nombreItem, cantidad, unidadMedida }) {
+    await esperar(RETARDO_SIMULADO_MS)
+
+    const nuevoItem = {
+      id: generarId(),
+      nombre: nombreItem.trim(),
+      cantidad: Number(cantidad),
+      unidadMedida,
+      fechaCaducidad: null,
+      idProducto: Number(idIngrediente),
+      idDespensa: 1,
+    }
+
+    despensaEnMemoria = [...despensaEnMemoria, nuevoItem]
+    return nuevoItem
   },
 }
