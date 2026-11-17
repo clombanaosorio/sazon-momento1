@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  /* Margen derecho extra para que el botón conmutador no tape el texto */
+  padding: 1.25rem 5rem 1.25rem 1.5rem;
+  background-color: var(--sazon-footer-fondo);
+  color: var(--sazon-footer-texto);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.texto {
+  margin: 0;
+  font-family: var(--sazon-fuente-cuerpo);
+}
+
+.etiqueta {
+  margin: 0;
+  font-family: var(--sazon-fuente-etiquetas);
+  font-size: 0.8rem;
+}

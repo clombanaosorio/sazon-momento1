@@ -1,0 +1,98 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: min(280px, 85vw);
+  height: 100%;
+  padding: 1rem;
+  background-color: var(--sazon-sidebar-fondo);
+  color: var(--sazon-sidebar-texto);
+  box-shadow: var(--sazon-sombra);
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s;
+}
+
+.abierta {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.fondoVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo {
+  font-family: var(--sazon-fuente-titulos);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.cerrar {
+  padding: 0.35rem 0.6rem;
+  background: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: var(--sazon-radio);
+}
+
+.lista {
+  display: grid;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.enlace {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  background: transparent;
+  color: inherit;
+  border: none;
+  border-radius: var(--sazon-radio);
+  font-size: 1rem;
+  text-align: left;
+}
+
+.enlace:hover,
+.activo {
+  background-color: rgba(250, 246, 233, 0.18);
+}
+
+.activo {
+  font-weight: 600;
+}
+
+/* El contorno global usa el verde del acento, que no se vería sobre verde hoja */
+.sidebar :focus-visible {
+  outline-color: var(--sazon-sidebar-texto);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .fondo {
+    transition: none;
+  }
+}

@@ -1,0 +1,31 @@
+.conmutador {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 15;
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  background-color: var(--sazon-verde-hoja);
+  color: var(--sazon-marfil);
+  border: 2px solid var(--sazon-marfil);
+  border-radius: 50%;
+  box-shadow: var(--sazon-sombra);
+  transition: transform 0.2s ease;
+}
+
+.conmutador:hover {
+  transform: scale(1.08);
+}
+
+.conmutador:focus-visible {
+  outline-color: var(--sazon-marfil);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .conmutador {
+    transition: none;
+  }
+}

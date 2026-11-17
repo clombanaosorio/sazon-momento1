@@ -1,0 +1,41 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--sazon-superficie);
+  color: var(--sazon-texto);
+  border-bottom: 1px solid var(--sazon-borde);
+}
+
+.marca {
+  font-family: var(--sazon-fuente-titulos);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.botonIcono {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: transparent;
+  color: inherit;
+  border: 1px solid var(--sazon-borde);
+  border-radius: var(--sazon-radio);
+}
+
+.botonIcono:hover {
+  border-color: var(--sazon-acento);
+}
+
+/* El perfil se empuja al extremo derecho */
+.botonPerfil {
+  margin-left: auto;
+  padding: 0.5rem 0.9rem;
+  font-family: var(--sazon-fuente-etiquetas);
+  font-size: 0.85rem;
+}
