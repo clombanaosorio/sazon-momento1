@@ -1,0 +1,75 @@
+/* Kit de marca Sazón: fuentes oficiales */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
+
+/* Kit de marca Sazón: paleta oficial */
+:root {
+  --sazon-marfil: #F4F4E8;
+  --sazon-cacao: #643B22;
+  --sazon-cacaoText: #F4F4E8;
+  --sazon-verdeNoche: #114622;
+  --sazon-verdeHondo: #215B33;
+  --sazon-verdeHoja: #3D8E33;
+  --sazon-hoja: #7FBA00;
+  --sazon-verdeNutresa: #1B4332;
+  --sazon-verdeNutresaCard: #133326;
+  --sazon-verdeNeon: #66d149;
+  --sazon-texto: #3F4040;
+  --sazon-texto2: #5B5E60;
+  --sazon-linea: #DAD9C4;
+  --sazon-blanco: #FFFFFF;
+
+  --font-inter: 'Inter', sans-serif;
+  --font-poppins: 'Poppins', sans-serif;
+  --font-mono-tag: 'IBM Plex Mono', monospace;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--sazon-marfil);
+  color: var(--sazon-texto);
+  font-family: var(--font-inter);
+}
+
+/* Tipografía del kit */
+h1, h2, h3, h4, h5, h6, strong {
+  font-family: var(--font-poppins);
+}
+
+p, span, li, a {
+  font-family: var(--font-inter);
+}
+
+button, input, select, label, code, time, output {
+  font-family: var(--font-mono-tag);
+}
+
+/* Utilidades de layout */
+.contenedor {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.pagina-modulo {
+  padding: 2rem 0;
+}
+
+.mensaje-estado {
+  margin-top: 1rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--sazon-linea);
+  border-radius: 10px;
+  background: var(--sazon-blanco);
+  color: var(--sazon-verdeHondo);
+}
+
+/* Scrollbar del kit */
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); }
+::-webkit-scrollbar-thumb { background: var(--sazon-verdeHoja); border-radius: 4px; }
