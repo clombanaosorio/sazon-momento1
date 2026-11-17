@@ -1,0 +1,44 @@
+.despensa-listado {
+  padding: 1.25rem;
+  border: 1px solid var(--sazon-linea);
+  border-radius: 14px;
+  background: var(--sazon-blanco);
+}
+
+.despensa-listado__titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  font-size: 1.15rem;
+  color: var(--sazon-verdeNoche);
+}
+
+.despensa-listado__contador {
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: var(--sazon-hoja);
+  color: var(--sazon-blanco);
+  font-family: var(--font-mono-tag);
+  font-size: 0.8rem;
+}
+
+.despensa-listado__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 600px) {
+  .despensa-listado {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .despensa-listado__chips {
+    gap: 0.45rem;
+  }
+}
