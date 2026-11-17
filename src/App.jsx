@@ -1,13 +1,13 @@
 
-import { useDespensa } from './features/despensa/hooks/useDespensa'
+import DespensaListado from './features/despensa/components/DespensaListado'
+
 const App = () => {
-    const { ingredientes, cargando, error } = useDespensa()
-    console.log({ ingredientes, cargando, error })
-
-
-  return (
+    
+     return (
     <main className="contenedor pagina-modulo">
+
       <h1>Despensa · Qué puedo cocinar hoy</h1>
+      <DespensaListado />
       
     </main>
   )
