@@ -1,0 +1,108 @@
+.despensa-formulario {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--sazon-linea);
+  border-radius: 12px;
+  background: var(--sazon-marfil);
+}
+
+.despensa-formulario__grupo {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.despensa-formulario__titulo {
+  margin-bottom: 0.75rem;
+  padding: 0;
+  font-family: var(--font-poppins);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sazon-verdeNoche);
+}
+
+.despensa-formulario__campos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.despensa-formulario__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.despensa-formulario__campo label {
+  font-size: 0.8rem;
+  color: var(--sazon-texto2);
+}
+
+.despensa-formulario__campo input,
+.despensa-formulario__campo select {
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--sazon-linea);
+  border-radius: 10px;
+  background: var(--sazon-blanco);
+  color: var(--sazon-texto);
+  font-size: 0.9rem;
+}
+
+.despensa-formulario__campo input:focus,
+.despensa-formulario__campo select:focus {
+  outline: 2px solid var(--sazon-verdeHoja);
+  outline-offset: 1px;
+}
+
+.despensa-formulario__error {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+  color: #D32F2F; /* rojo del kit (brandZenu) */
+}
+
+.despensa-formulario__acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.despensa-formulario__boton {
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.despensa-formulario__boton--guardar {
+  background: var(--sazon-verdeHoja);
+  color: var(--sazon-blanco);
+}
+
+.despensa-formulario__boton--cancelar {
+  border-color: var(--sazon-verdeHondo);
+  background: transparent;
+  color: var(--sazon-verdeHondo);
+}
+
+.despensa-formulario__grupo:disabled .despensa-formulario__boton {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .despensa-formulario__campos {
+    grid-template-columns: 1fr;
+  }
+
+  .despensa-formulario__acciones {
+    flex-direction: column-reverse;
+  }
+
+  .despensa-formulario__boton {
+    width: 100%;
+  }
+}
