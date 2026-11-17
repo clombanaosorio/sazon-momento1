@@ -1,9 +1,9 @@
 .despensa-formulario {
   margin-bottom: 1.25rem;
   padding: 1rem;
-  border: 1px solid var(--sazon-linea);
-  border-radius: 12px;
-  background: var(--sazon-marfil);
+  border: 1px solid var(--sazon-borde);
+  border-radius: var(--sazon-radio);
+  background: var(--sazon-fondo);
 }
 
 .despensa-formulario__grupo {
@@ -16,10 +16,10 @@
 .despensa-formulario__titulo {
   margin-bottom: 0.75rem;
   padding: 0;
-  font-family: var(--font-poppins);
+  font-family: var(--sazon-fuente-titulos);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--sazon-verdeNoche);
+  color: var(--sazon-texto);
 }
 
 .despensa-formulario__campos {
@@ -35,30 +35,26 @@
 }
 
 .despensa-formulario__campo label {
+  font-family: var(--sazon-fuente-etiquetas);
   font-size: 0.8rem;
-  color: var(--sazon-texto2);
+  color: var(--sazon-texto);
 }
 
 .despensa-formulario__campo input,
 .despensa-formulario__campo select {
   padding: 0.55rem 0.75rem;
-  border: 1px solid var(--sazon-linea);
-  border-radius: 10px;
-  background: var(--sazon-blanco);
+  border: 1px solid var(--sazon-borde);
+  border-radius: var(--sazon-radio);
+  background: var(--sazon-superficie);
   color: var(--sazon-texto);
+  font-family: var(--sazon-fuente-cuerpo);
   font-size: 0.9rem;
-}
-
-.despensa-formulario__campo input:focus,
-.despensa-formulario__campo select:focus {
-  outline: 2px solid var(--sazon-verdeHoja);
-  outline-offset: 1px;
 }
 
 .despensa-formulario__error {
   margin: 0.75rem 0 0;
   font-size: 0.85rem;
-  color: #D32F2F; /* rojo del kit (brandZenu) */
+  color: #D32F2F;
 }
 
 .despensa-formulario__acciones {
@@ -74,18 +70,17 @@
   border-radius: 999px;
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: pointer;
 }
 
 .despensa-formulario__boton--guardar {
-  background: var(--sazon-verdeHoja);
-  color: var(--sazon-blanco);
+  background: var(--sazon-acento);
+  color: var(--sazon-fondo);
 }
 
 .despensa-formulario__boton--cancelar {
-  border-color: var(--sazon-verdeHondo);
+  border-color: var(--sazon-acento);
   background: transparent;
-  color: var(--sazon-verdeHondo);
+  color: var(--sazon-acento);
 }
 
 .despensa-formulario__grupo:disabled .despensa-formulario__boton {

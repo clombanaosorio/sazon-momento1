@@ -3,23 +3,22 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.45rem 0.9rem;
-  border: 1px solid var(--sazon-linea);
+  border: 1px solid var(--sazon-borde);
   border-radius: 999px;
-  background: var(--sazon-blanco);
-  color: var(--sazon-verdeHondo);
-  box-shadow: 0 1px 2px rgba(17, 70, 34, 0.06);
+  background: var(--sazon-superficie);
+  color: var(--sazon-texto);
 }
 
 .despensa-chip__nombre {
-  font-family: var(--font-inter);
+  font-family: var(--sazon-fuente-cuerpo);
   font-weight: 600;
 }
 
 .despensa-chip__cantidad {
   padding: 0.1rem 0.5rem;
   border-radius: 999px;
-  background: var(--sazon-marfil);
-  color: var(--sazon-verdeHoja);
-  font-family: var(--font-mono-tag);
+  background: var(--sazon-fondo);
+  color: var(--sazon-acento);
+  font-family: var(--sazon-fuente-etiquetas);
   font-size: 0.8rem;
 }

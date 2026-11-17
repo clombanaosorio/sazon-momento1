@@ -1,8 +1,9 @@
 .despensa-listado {
   padding: 1.25rem;
-  border: 1px solid var(--sazon-linea);
-  border-radius: 14px;
-  background: var(--sazon-blanco);
+  border: 1px solid var(--sazon-borde);
+  border-radius: var(--sazon-radio);
+  background: var(--sazon-superficie);
+  box-shadow: var(--sazon-sombra);
 }
 
 .despensa-listado__encabezado {
@@ -20,15 +21,15 @@
   gap: 0.6rem;
   margin: 0;
   font-size: 1.15rem;
-  color: var(--sazon-verdeNoche);
+  color: var(--sazon-texto);
 }
 
 .despensa-listado__contador {
   padding: 0.1rem 0.55rem;
   border-radius: 999px;
-  background: var(--sazon-hoja);
-  color: var(--sazon-blanco);
-  font-family: var(--font-mono-tag);
+  background: var(--sazon-acento);
+  color: var(--sazon-fondo);
+  font-family: var(--sazon-fuente-etiquetas);
   font-size: 0.8rem;
 }
 
@@ -36,22 +37,16 @@
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 999px;
-  background: var(--sazon-verdeHoja);
-  color: var(--sazon-blanco);
+  background: var(--sazon-acento);
+  color: var(--sazon-fondo);
   font-size: 0.85rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
 .despensa-btn-agregar:hover {
-  background: var(--sazon-verdeHondo);
+  filter: brightness(0.9);
   transform: translateY(-1px);
-}
-
-.despensa-btn-agregar:focus-visible {
-  outline: 2px solid var(--sazon-verdeNoche);
-  outline-offset: 2px;
 }
 
 .despensa-listado__chips {
@@ -66,7 +61,6 @@
 @media (max-width: 600px) {
   .despensa-listado {
     padding: 1rem;
-    border-radius: 12px;
   }
 
   .despensa-listado__chips {

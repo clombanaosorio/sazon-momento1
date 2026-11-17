@@ -1,29 +1,55 @@
-/* Kit de marca Sazón: fuentes oficiales */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
+/* Fuentes del kit (deben ir antes de cualquier otra regla) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
 
-/* Kit de marca Sazón: paleta oficial */
+/* ===== Kit de marca Sazón: paleta base ===== */
 :root {
-  --sazon-marfil: #F4F4E8;
-  --sazon-cacao: #643B22;
-  --sazon-cacaoText: #F4F4E8;
-  --sazon-verdeNoche: #114622;
-  --sazon-verdeHondo: #215B33;
-  --sazon-verdeHoja: #3D8E33;
-  --sazon-hoja: #7FBA00;
-  --sazon-verdeNutresa: #1B4332;
-  --sazon-verdeNutresaCard: #133326;
-  --sazon-verdeNeon: #66d149;
-  --sazon-texto: #3F4040;
-  --sazon-texto2: #5B5E60;
-  --sazon-linea: #DAD9C4;
-  --sazon-blanco: #FFFFFF;
+  --sazon-verde-hoja: #3f7d32;
+  --sazon-verde-nutresa: #0b4a36;
+  --sazon-cacao: #3e2a1f;
+  --sazon-marfil: #faf6e9;
 
-  --font-inter: 'Inter', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
-  --font-mono-tag: 'IBM Plex Mono', monospace;
+  /* Tipografías */
+  --sazon-fuente-titulos: 'Poppins', sans-serif;
+  --sazon-fuente-cuerpo: 'Inter', sans-serif;
+  --sazon-fuente-etiquetas: 'IBM Plex Mono', monospace;
+
+  /* Barra lateral: verde hoja en ambos modos */
+  --sazon-sidebar-fondo: var(--sazon-verde-hoja);
+  --sazon-sidebar-texto: var(--sazon-marfil);
+
+  /* Espaciado y forma */
+  --sazon-radio: 8px;
+  --sazon-sombra: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Base */
+/* ===== Modo día (por defecto): fondo marfil ===== */
+:root,
+[data-theme='dia'] {
+  --sazon-fondo: var(--sazon-marfil);
+  --sazon-texto: var(--sazon-cacao);
+  --sazon-superficie: #ffffff;
+  --sazon-borde: rgba(62, 42, 31, 0.2);
+  --sazon-texto-tachado: rgba(62, 42, 31, 0.55);
+  --sazon-acento: var(--sazon-verde-hoja);
+
+  --sazon-footer-fondo: var(--sazon-cacao);
+  --sazon-footer-texto: var(--sazon-marfil);
+}
+
+/* ===== Modo noche: fondo verde Nutresa ===== */
+[data-theme='noche'] {
+  --sazon-fondo: var(--sazon-verde-nutresa);
+  --sazon-texto: var(--sazon-marfil);
+  --sazon-superficie: rgba(250, 246, 233, 0.08);
+  --sazon-borde: rgba(250, 246, 233, 0.25);
+  --sazon-texto-tachado: rgba(250, 246, 233, 0.55);
+  --sazon-acento: #9ad483;
+
+  --sazon-footer-fondo: var(--sazon-marfil);
+  --sazon-footer-texto: var(--sazon-cacao);
+}
+
+/* ===== Base global ===== */
 *,
 *::before,
 *::after {
@@ -32,25 +58,30 @@
 
 body {
   margin: 0;
-  background-color: var(--sazon-marfil);
+  min-height: 100vh;
+  background-color: var(--sazon-fondo);
   color: var(--sazon-texto);
-  font-family: var(--font-inter);
+  font-family: var(--sazon-fuente-cuerpo);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Tipografía del kit */
-h1, h2, h3, h4, h5, h6, strong {
-  font-family: var(--font-poppins);
+h1,
+h2,
+h3 {
+  font-family: var(--sazon-fuente-titulos);
 }
 
-p, span, li, a {
-  font-family: var(--font-inter);
+button {
+  font-family: inherit;
+  cursor: pointer;
 }
 
-button, input, select, label, code, time, output {
-  font-family: var(--font-mono-tag);
+:focus-visible {
+  outline: 2px solid var(--sazon-acento);
+  outline-offset: 2px;
 }
 
-/* Utilidades de layout */
+/* ===== Utilidades del proyecto ===== */
 .contenedor {
   width: min(1100px, 92%);
   margin: 0 auto;
@@ -63,13 +94,8 @@ button, input, select, label, code, time, output {
 .mensaje-estado {
   margin-top: 1rem;
   padding: 0.7rem 0.9rem;
-  border: 1px solid var(--sazon-linea);
-  border-radius: 10px;
-  background: var(--sazon-blanco);
-  color: var(--sazon-verdeHondo);
+  border: 1px solid var(--sazon-borde);
+  border-radius: var(--sazon-radio);
+  background: var(--sazon-superficie);
+  color: var(--sazon-texto);
 }
-
-/* Scrollbar del kit */
-::-webkit-scrollbar { width: 7px; height: 7px; }
-::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.05); }
-::-webkit-scrollbar-thumb { background: var(--sazon-verdeHoja); border-radius: 4px; }
